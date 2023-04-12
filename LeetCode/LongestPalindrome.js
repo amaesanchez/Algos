@@ -4,7 +4,7 @@ Letters are case sensitive, for example, "Aa" is not considered a palindrome her
  * @param {string} s
  * @return {number}
  */
- var longestPalindrome = function(s) {
+var longestPalindrome = function(s) {
   if (s.length === 1) {
       return 1;
   }
@@ -19,6 +19,8 @@ Letters are case sensitive, for example, "Aa" is not considered a palindrome her
           evens += charCount[char];
       } else if (charCount[char] % 2 !== 0 && charCount[char] > odd) {
           odd = charCount[char];
+      } else {
+          evens += (charCount[char] - 1)
       }
   }
 
